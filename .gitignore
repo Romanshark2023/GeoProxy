@@ -1,0 +1,6 @@
+.runtime/
+__pycache__/
+.vercel/
+geoproxy-data/raw/
+geoproxy-data/visuals/
+data/app-preview.png
