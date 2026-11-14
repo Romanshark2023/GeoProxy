@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071c20">
+<meta name="description" content="Welcome to GeoProxy. A new perspective starts here.">
+<title>Welcome to GeoProxy</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#edf7f5;background:#071c20;min-height:100svh;display:flex;flex-direction:column}
+header,footer{padding:28px clamp(24px,6vw,88px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:750;letter-spacing:-1px;font-size:24px;display:flex;align-items:center;gap:12px}.mark{color:#86e6b9;font-size:32px}.tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#a0bbb8}
+main{flex:1;display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:50px;padding:70px clamp(24px,8vw,120px)}
+.eyebrow{color:#86e6b9;letter-spacing:3px;text-transform:uppercase;font-size:12px;font-weight:650}h1{font-size:clamp(48px,6.7vw,96px);font-weight:600;letter-spacing:-.065em;line-height:1.04;margin:24px 0}h1 span{color:#86e6b9}p{color:#abc1be;max-width:440px;font-size:18px;line-height:1.7}
+a{display:inline-flex;align-items:center;gap:28px;background:#b3f3d2;color:#082923;padding:16px 22px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:650;margin-top:24px}a:hover{background:#d0ffe5}a:focus-visible{outline:3px solid white;outline-offset:5px}
+.orbit{width:min(100%,420px);aspect-ratio:1;margin:auto;position:relative;border-radius:50%;border:1px solid #31504f;background:radial-gradient(circle at 35% 30%,#246056 0,#123b3b 35%,#091e25 72%);box-shadow:0 0 100px #32736020;overflow:hidden}
+.orbit:before{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-linear-gradient(0deg,transparent 0,transparent 38px,#8bd5b31a 39px,#8bd5b31a 40px)}
+.longitude{position:absolute;inset:0 22%;border:1px solid #8bd5b344;border-radius:50%}.longitude.second{inset:0 40%}.equator{position:absolute;inset:30% 0;border:1px solid #8bd5b344;border-radius:50%}.point{position:absolute;left:30%;top:32%;width:12px;height:12px;background:#b3f3d2;border-radius:50%;box-shadow:0 0 0 10px #b3f3d214,0 0 35px #b3f3d2}
+footer{border-top:1px solid #28403f;color:#8ca8a4;font-size:12px}.status{display:flex;align-items:center;gap:8px}.status:before{content:"";width:7px;height:7px;border-radius:50%;background:#86e6b9}
+@media(max-width:700px){main{grid-template-columns:1fr;padding-top:36px;gap:45px}.orbit{max-width:260px}header .tag{display:none}footer{flex-wrap:wrap}h1{font-size:58px}p{font-size:16px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><span class="mark" aria-hidden="true">?</span>GeoProxy</div><div class="tag">A new perspective</div></header>
+<main>
+<section aria-labelledby="welcome"><div class="eyebrow">Our journey begins</div><h1 id="welcome">Welcome to<br><span>GeoProxy.</span></h1><p>Big ideas start with a first step. This is ours.<br>We're building something new. Stay curious.</p><a href="https://github.com/Romanshark2023/GeoProxy">Follow our progress <span aria-hidden="true">?</span></a></section>
+<div class="orbit" role="img" aria-label="A stylized globe with a bright location point"><div class="longitude"></div><div class="longitude second"></div><div class="equator"></div><div class="point"></div></div>
+</main>
+<footer><span>GeoProxy � Built with curiosity.</span><span class="status">The beginning of something new</span></footer>
+</body></html>
