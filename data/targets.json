@@ -1,0 +1,391 @@
+{
+  "schema_version": "0.2",
+  "generated_utc": "2026-11-14T15:38:32+00:00",
+  "method": {
+    "window_km": 20,
+    "pixel_m": 500,
+    "min_coverage": 0.95,
+    "projection": "azimuthal equidistant on each body's sphere, centred on each location",
+    "resampling": "bilinear sub-samples averaged into each pixel",
+    "method_values": [
+      "measured",
+      "modelled",
+      "literature",
+      "missing"
+    ]
+  },
+  "features": {
+    "relief_m": {
+      "label": "Relief",
+      "unit": "m",
+      "group": "terrain",
+      "definition": "90th minus 10th percentile of elevation in the window"
+    },
+    "slope_deg": {
+      "label": "Median slope",
+      "unit": "degrees",
+      "group": "terrain",
+      "definition": "Median slope of the window, from gradients of the 500 m grid"
+    },
+    "roughness_m": {
+      "label": "Roughness (TRI)",
+      "unit": "m",
+      "group": "terrain",
+      "definition": "Mean absolute elevation difference between each cell and its 8 neighbours (Terrain Ruggedness Index, Wilson et al. 2007)"
+    },
+    "temp_mean_c": {
+      "label": "Mean air temperature",
+      "unit": "°C",
+      "group": "environment",
+      "definition": "Annual mean temperature (Earth: NASA POWER T2M annual value)"
+    },
+    "temp_min_c": {
+      "label": "Minimum air temperature",
+      "unit": "°C",
+      "group": "environment",
+      "definition": "Low-temperature extreme (Earth: NASA POWER T2M_MIN annual value)"
+    },
+    "temp_max_c": {
+      "label": "Maximum air temperature",
+      "unit": "°C",
+      "group": "environment",
+      "definition": "High-temperature extreme (Earth: NASA POWER T2M_MAX annual value)"
+    },
+    "precip_mm_day": {
+      "label": "Precipitation",
+      "unit": "mm/day",
+      "group": "environment",
+      "definition": "Mean precipitation (Earth: NASA POWER PRECTOTCORR annual value)"
+    }
+  },
+  "sources": {
+    "copernicus-glo90": {
+      "body": "earth",
+      "native_res_m": 90,
+      "dataset": "Copernicus DEM GLO-90 (digital surface model, about 90 m)",
+      "provider": "ESA / European Union Copernicus programme, via AWS Open Data",
+      "url": "https://registry.opendata.aws/copernicus-dem/",
+      "attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA",
+      "caveat": "Surface model: includes vegetation canopy and buildings, mostly smoothed out at 500 m."
+    },
+    "mola-463m": {
+      "body": "mars",
+      "native_res_m": 463,
+      "dataset": "Mars MGS MOLA global DEM, 463 m",
+      "provider": "NASA Mars Global Surveyor MOLA (PDS); global mosaic hosted by USGS Astrogeology",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Mars_MGS_MOLA_DEM_mosaic_global_463m.tif",
+      "attribution": "NASA / MOLA Science Team / USGS Astrogeology",
+      "caveat": "Cells without laser tracks are interpolated; elevations are relative to the Mars areoid."
+    },
+    "lola-118m": {
+      "body": "moon",
+      "native_res_m": 118,
+      "dataset": "Moon LRO LOLA global DEM, 118 m (March 2014)",
+      "provider": "NASA Lunar Reconnaissance Orbiter LOLA (PDS); global mosaic hosted by USGS Astrogeology",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Lunar_LRO_LOLA_Global_LDEM_118m_Mar2014.tif",
+      "attribution": "NASA / LOLA Science Team / USGS Astrogeology",
+      "caveat": "Elevations are relative to a 1737.4 km reference sphere."
+    },
+    "nasa-power": {
+      "body": "earth",
+      "native_res_m": 50000,
+      "dataset": "NASA POWER climatology (MERRA-2 based)",
+      "provider": "NASA Langley Research Center POWER project",
+      "url": "https://power.larc.nasa.gov/",
+      "attribution": "NASA POWER Project",
+      "caveat": "Coarse grid (about 50 km): describes the surrounding region, not a summit or valley floor."
+    }
+  },
+  "targets": [
+    {
+      "id": "jezero-crater",
+      "body": "mars",
+      "name": "Jezero Crater",
+      "region": "Mars · Perseverance (Mars 2020) landing site",
+      "lat": 18.38,
+      "lon": 77.58,
+      "notes": "Ancient lake basin with a river delta.",
+      "features": {
+        "relief_m": {
+          "value": 140.86,
+          "unit": "m",
+          "method": "measured",
+          "source": "mola-463m"
+        },
+        "slope_deg": {
+          "value": 0.66,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "mola-463m"
+        },
+        "roughness_m": {
+          "value": 6.28,
+          "unit": "m",
+          "method": "measured",
+          "source": "mola-463m"
+        },
+        "temp_mean_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_min_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_max_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "precip_mm_day": {
+          "value": null,
+          "unit": "mm/day",
+          "method": "missing",
+          "source": null
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": null,
+        "errors": []
+      }
+    },
+    {
+      "id": "gale-crater",
+      "body": "mars",
+      "name": "Gale Crater",
+      "region": "Mars · Curiosity (MSL) exploration area",
+      "lat": -5.4,
+      "lon": 137.8,
+      "notes": "Crater with a central layered mound (Aeolis Mons).",
+      "features": {
+        "relief_m": {
+          "value": 2869.06,
+          "unit": "m",
+          "method": "measured",
+          "source": "mola-463m"
+        },
+        "slope_deg": {
+          "value": 10.64,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "mola-463m"
+        },
+        "roughness_m": {
+          "value": 94.61,
+          "unit": "m",
+          "method": "measured",
+          "source": "mola-463m"
+        },
+        "temp_mean_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_min_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_max_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "precip_mm_day": {
+          "value": null,
+          "unit": "mm/day",
+          "method": "missing",
+          "source": null
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": null,
+        "errors": []
+      }
+    },
+    {
+      "id": "elysium-insight",
+      "body": "mars",
+      "name": "Elysium Planitia",
+      "region": "Mars · InSight landing site",
+      "lat": 4.502,
+      "lon": 135.623,
+      "notes": "Smooth volcanic plain.",
+      "features": {
+        "relief_m": {
+          "value": 65.72,
+          "unit": "m",
+          "method": "measured",
+          "source": "mola-463m"
+        },
+        "slope_deg": {
+          "value": 0.26,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "mola-463m"
+        },
+        "roughness_m": {
+          "value": 1.85,
+          "unit": "m",
+          "method": "measured",
+          "source": "mola-463m"
+        },
+        "temp_mean_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_min_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_max_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "precip_mm_day": {
+          "value": null,
+          "unit": "mm/day",
+          "method": "missing",
+          "source": null
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": null,
+        "errors": []
+      }
+    },
+    {
+      "id": "shackleton-crater",
+      "body": "moon",
+      "name": "Shackleton Crater",
+      "region": "Moon · South Pole",
+      "lat": -89.667,
+      "lon": 129.783,
+      "notes": "Polar crater; region considered for a permanent base near its rim.",
+      "features": {
+        "relief_m": {
+          "value": 3675.01,
+          "unit": "m",
+          "method": "measured",
+          "source": "lola-118m"
+        },
+        "slope_deg": {
+          "value": 28.38,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "lola-118m"
+        },
+        "roughness_m": {
+          "value": 177.39,
+          "unit": "m",
+          "method": "measured",
+          "source": "lola-118m"
+        },
+        "temp_mean_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_min_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_max_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "precip_mm_day": {
+          "value": null,
+          "unit": "mm/day",
+          "method": "missing",
+          "source": null
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": null,
+        "errors": []
+      }
+    },
+    {
+      "id": "apollo-11-tranquillitatis",
+      "body": "moon",
+      "name": "Mare Tranquillitatis",
+      "region": "Moon · Apollo 11 landing site (equatorial)",
+      "lat": 0.674,
+      "lon": 23.473,
+      "notes": "Equatorial mare basalt plain.",
+      "features": {
+        "relief_m": {
+          "value": 202.08,
+          "unit": "m",
+          "method": "measured",
+          "source": "lola-118m"
+        },
+        "slope_deg": {
+          "value": 0.74,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "lola-118m"
+        },
+        "roughness_m": {
+          "value": 6.72,
+          "unit": "m",
+          "method": "measured",
+          "source": "lola-118m"
+        },
+        "temp_mean_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_min_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "temp_max_c": {
+          "value": null,
+          "unit": "°C",
+          "method": "missing",
+          "source": null
+        },
+        "precip_mm_day": {
+          "value": null,
+          "unit": "mm/day",
+          "method": "missing",
+          "source": null
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": null,
+        "errors": []
+      }
+    }
+  ]
+}
