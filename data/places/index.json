@@ -1,0 +1,227 @@
+{
+  "-28,-68": {
+    "region": "Catamarca",
+    "country": "Argentina",
+    "nearby": "Tinogasta",
+    "distanceKm": 43,
+    "geonamesId": "3834361",
+    "image": "data/places/-28_-68.jpg",
+    "bounds": [
+      -68.611127,
+      -28.359729,
+      -67.388873,
+      -27.640271
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=-68.611127%2C-28.359729%2C-67.388873%2C-27.640271&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "-24,-70": {
+    "region": "Antofagasta",
+    "country": "Chile",
+    "nearby": "Antofagasta",
+    "distanceKm": 56,
+    "geonamesId": "3899539",
+    "image": "data/places/-24_-70.jpg",
+    "bounds": [
+      -70.590658,
+      -24.359729,
+      -69.409342,
+      -23.640271
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=-70.590658%2C-24.359729%2C-69.409342%2C-23.640271&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "4,-74": {
+    "region": "Meta",
+    "country": "Colombia",
+    "nearby": "Acacías",
+    "distanceKm": 27,
+    "geonamesId": "3690577",
+    "image": "data/places/4_-74.jpg",
+    "bounds": [
+      -74.540911,
+      3.640271,
+      -73.459089,
+      4.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=-74.540911%2C3.640271%2C-73.459089%2C4.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "28,98": {
+    "region": "Kachin State",
+    "country": "Myanmar",
+    "nearby": "Putao",
+    "distanceKm": 93,
+    "geonamesId": "1299371",
+    "image": "data/places/28_98.jpg",
+    "bounds": [
+      97.388873,
+      27.640271,
+      98.611127,
+      28.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=97.388873%2C27.640271%2C98.611127%2C28.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "38,56": {
+    "region": "Golestan",
+    "country": "Iran",
+    "nearby": "Marāveh Tappeh",
+    "distanceKm": 11,
+    "geonamesId": "123295",
+    "image": "data/places/38_56.jpg",
+    "bounds": [
+      55.315247,
+      37.640271,
+      56.684753,
+      38.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=55.315247%2C37.640271%2C56.684753%2C38.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "40,72": {
+    "region": "Batken",
+    "country": "Kyrgyzstan",
+    "nearby": "Kara-Dzhygach",
+    "distanceKm": 16,
+    "geonamesId": "1528161",
+    "image": "data/places/40_72.jpg",
+    "bounds": [
+      71.295611,
+      39.640271,
+      72.704389,
+      40.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=71.295611%2C39.640271%2C72.704389%2C40.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "46,8": {
+    "region": "Verbano-Cusio-Ossola",
+    "country": "Italy",
+    "nearby": "Macugnaga",
+    "distanceKm": 4,
+    "geonamesId": "3174366",
+    "image": "data/places/46_8.jpg",
+    "bounds": [
+      7.223225,
+      45.640271,
+      8.776775,
+      46.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=7.223225%2C45.640271%2C8.776775%2C46.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "46,70": {
+    "region": "Karaganda",
+    "country": "Kazakhstan",
+    "nearby": "Chiganak",
+    "distanceKm": 130,
+    "geonamesId": "1537856",
+    "image": "data/places/46_70.jpg",
+    "bounds": [
+      69.223225,
+      45.640271,
+      70.776775,
+      46.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=69.223225%2C45.640271%2C70.776775%2C46.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "54,72": {
+    "region": "North Kazakhstan",
+    "country": "Kazakhstan",
+    "nearby": "Talshik",
+    "distanceKm": 41,
+    "geonamesId": "1518511",
+    "image": "data/places/54_72.jpg",
+    "bounds": [
+      71.08199,
+      53.640271,
+      72.91801,
+      54.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=71.08199%2C53.640271%2C72.91801%2C54.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "60,-110": {
+    "region": "60th parallel near the Alberta–Saskatchewan boundary",
+    "country": "Canada",
+    "nearby": "Fort Smith",
+    "distanceKm": 105,
+    "geonamesId": "5955954",
+    "image": "data/places/60_-110.jpg",
+    "bounds": [
+      -111.079186,
+      59.640271,
+      -108.920814,
+      60.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=-111.079186%2C59.640271%2C-108.920814%2C60.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "62,-96": {
+    "region": "Nunavut",
+    "country": "Canada",
+    "nearby": "Arviat",
+    "distanceKm": 143,
+    "geonamesId": "5887448",
+    "image": "data/places/62_-96.jpg",
+    "bounds": [
+      -97.149362,
+      61.640271,
+      -94.850638,
+      62.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=-97.149362%2C61.640271%2C-94.850638%2C62.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "62,138": {
+    "region": "Sakha Republic",
+    "country": "Russia",
+    "nearby": "Nezhdaninskoe",
+    "distanceKm": 78,
+    "geonamesId": "6930488",
+    "image": "data/places/62_138.jpg",
+    "bounds": [
+      136.850638,
+      61.640271,
+      139.149362,
+      62.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=136.850638%2C61.640271%2C139.149362%2C62.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "62,172": {
+    "region": "Kamchatka Krai",
+    "country": "Russia",
+    "nearby": "Kamenskoye",
+    "distanceKm": 304,
+    "geonamesId": "2125034",
+    "image": "data/places/62_172.jpg",
+    "bounds": [
+      170.850638,
+      61.640271,
+      173.149362,
+      62.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=170.850638%2C61.640271%2C173.149362%2C62.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "64,-144": {
+    "region": "Alaska",
+    "country": "United States of America",
+    "nearby": "Deltana",
+    "distanceKm": 61,
+    "geonamesId": "7262847",
+    "image": "data/places/64_-144.jpg",
+    "bounds": [
+      -145.230904,
+      63.640271,
+      -142.769096,
+      64.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=-145.230904%2C63.640271%2C-142.769096%2C64.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  },
+  "64,34": {
+    "region": "Karelia",
+    "country": "Russia",
+    "nearby": "Nadvoitsy",
+    "distanceKm": 18,
+    "geonamesId": "523662",
+    "image": "data/places/64_34.jpg",
+    "bounds": [
+      32.769096,
+      63.640271,
+      35.230904,
+      64.359729
+    ],
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=32.769096%2C63.640271%2C35.230904%2C64.359729&WIDTH=720&HEIGHT=480&TIME=2000-12-01"
+  }
+}
