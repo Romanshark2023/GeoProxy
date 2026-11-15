@@ -194,4 +194,4 @@ Current files (SHA-256):
 |---|---|---|
 | `sites.json` | 14 established Earth analog sites | `85536856442b5dd06d41f549663bb1db038efc6a34f3c243186a22a613566ac6` |
 | `targets.json` | 5 Moon/Mars targets | `494ba4e86b68e866089b2ca7e999b9acf8b07d3b3e591bfbe21314734e11ea5d` |
-| `discoveries.json` | global search, 20 candidates per target | `36aaa1950ca4c78c3bd888f702708a252f814923b9fdaedcc1fc26fea9227f8c` |
+| `discoveries.json` | global search, 20 candidates per target (ratio verdicts, bare ground) | `d56af8af7b3b18b235c2f6c6e8db0fbc19b9995c646691e080b9bce2b52acfde` |
