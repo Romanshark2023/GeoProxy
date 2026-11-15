@@ -1,0 +1,36 @@
+{
+  "apollo-11-tranquillitatis": {
+    "temp_min_c": {
+      "value": -178.2,
+      "citation": "NASA NSSDCA Moon Fact Sheet (D.R. Williams, upd. 2024-01-11): equatorial diurnal SURFACE temperature range 95-390 K; surface temperature, not air"
+    },
+    "temp_max_c": {
+      "value": 116.9,
+      "citation": "NASA NSSDCA Moon Fact Sheet (D.R. Williams, upd. 2024-01-11): equatorial diurnal SURFACE temperature range 95-390 K; surface temperature, not air"
+    }
+  },
+  "shackleton-crater": {
+    "temp_mean_c": {
+      "value": -183.2,
+      "citation": "Haruyama et al. (2008), Science 322, 938, doi:10.1126/science.1164020 (Kaguya): permanently shadowed crater interior averages ~90 K; the sunlit rim, where a base would sit, is far warmer"
+    },
+    "temp_min_c": {
+      "value": -185.2,
+      "citation": "Haruyama et al. (2008), Science 322, 938, doi:10.1126/science.1164020: crater floor reaches ~88 K"
+    },
+    "temp_max_c": {
+      "value": -173.2,
+      "citation": "Haruyama et al. (2008), Science 322, 938, doi:10.1126/science.1164020: shadowed interior never exceeds ~100 K"
+    }
+  },
+  "jezero-crater": {
+    "temp_min_c": {
+      "value": -83,
+      "citation": "NASA Mars 2020 MEDA weather report, sols 43-44 (April 2021): early-mission diurnal low (northern spring), not an annual extreme; see Rodríguez-Manfredi et al. (2023), Nat. Geosci. 16, 19-28, doi:10.1038/s41561-022-01084-0"
+    },
+    "temp_max_c": {
+      "value": -22,
+      "citation": "NASA Mars 2020 MEDA weather report, sols 43-44 (April 2021): early-mission diurnal high (northern spring), not an annual extreme"
+    }
+  }
+}

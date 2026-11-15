@@ -1,13 +1,18 @@
-# GeoProxy local prototype
+# GeoProxy | NASA Space Apps Challenge
 
-Run `node server.cjs` from this folder, then open http://127.0.0.1:4173.
+[Open the public demo](https://geoproxy-nine.vercel.app) · [Interactive field map](https://geoproxy-nine.vercel.app/field-map.html) · [Candidate reports](docs/candidate-reports.md)
 
-The demo uses vanilla HTML/JS and a small Node HTTP server for quick review. It is not yet the planned Next.js production application. `/api/match` serves reproducible precomputed rankings, not a new global scan on each click. NASA GIBS WMS provides live satellite imagery requests.
+GeoProxy searches sampled Earth terrain for places that resemble lunar and Martian exploration targets. Choose Jezero Crater in the globe explorer, inspect the top Earth candidate and compare relief, slope and roughness. Adjust isolation or rover openness and watch the shortlist reorder. Use the field map to compare discoveries with established analog sites and explore mission objectives.
 
-Rebuild data with scripts/build-demo.py using NumPy, Pillow and h5py (the latter installed in ../.runtime). Source inputs remain in geoproxy-data/raw. The derived data/demo.json is small enough to ship with the frontend.
+**How the result is produced.** The discovery notebook scans Earth offline and refines shortlisted terrain windows. The browser reads those results and reranks candidates with the selected weights. A percentage describes relative fit under those settings. Terrain similarity cannot reproduce vacuum, gravity or radiation, and operational preferences do not predict crew safety or rover performance.
 
-Method: sample 7 by 7 points at 10 km spacing on each planet; calculate P90 minus P10 elevation and median slope. Compare log-transformed features with equal weights and standard deviations from Earth samples. Score = 100 exp(-RMS standardized distance). Earth sample centers are 2 degrees apart between 60 S and 80 N, with windows rejected if any sample is at or below sea level. This simple mask excludes some valid land and is not a complete global search. The latitude/longitude grid is not area weighted. The two features are correlated, and this exploratory score has not been calibrated or validated as analog quality.
+**Evidence and reproducibility**
 
-MOLA: PDS megt90n000eb version 1.1, big-endian signed int16 meters above areoid, 1/16 degree grid. Contains source-interpolated bins, with coverage not resolved here. Earth: existing GMT earth_relief_05m.grd, 5 arc-minute grid with 0.5 scale factor applied; release date/version not recorded in workspace. Physical sampling distance is common, but source effective resolution and measurement methods differ. The Earth grid is too coarse for rover safety or fine slope analysis. No temperature, mineralogy, access or environmental equivalence is claimed. Missing elevation is rejected. Satellite image date: 2024-01-15, MODIS Terra true color; imagery does not enter the similarity calculation.
+- [Discovery notebook](colab/geoproxy_discovery.ipynb): global search, refinement and validation.
+- [Site and target notebook](colab/geoproxy_pipeline.ipynb): source data, terrain features and cited temperature context.
+- [Data guide](data/README.md): schemas, sources, units, score formula, export hashes and known gaps.
+- [Candidate reports](docs/candidate-reports.md): worked examples for evaluation.
 
-Verified all three targets return five candidates; candidate selection updates detail; NASA GIBS image loaded in browser; no JavaScript errors during the verification flow. Current viewer uses shaded image spheres rather than a true georeferenced 3D globe.
+The November 15 notebook revision adds landform comparisons, updated noise floors and screening changes. The published discovery JSON still contains the previous run. Regenerate the exports in Colab and update their hashes before claiming results from the revised scan. The globe explorer separately displays the cited temperatures from the notebook; these do not affect terrain scores.
+
+**Run locally:** From the repository root, run `node server.cjs` and open http://127.0.0.1:4173. The static app runs without a build or API key. External map tiles, chart libraries and satellite imagery require internet access.

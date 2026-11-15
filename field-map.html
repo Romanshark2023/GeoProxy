@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GeoProxy · Earth analogs for the Moon and Mars</title>
+  <meta name="description" content="Find and compare places on Earth whose terrain resembles candidate Moon-base and Mars landing sites, using NASA, ESA and NOAA data.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body class="loading">
+  <header class="topbar"><a href="index.html#explorer" style="color:inherit">Globe explorer</a>
+    <div class="brand"><span class="logo" aria-hidden="true">◎</span> GeoProxy <small>Planetary analog explorer</small></div>
+    <div class="selector" role="group" aria-label="Choose a world and a reference site">
+      <div class="seg" role="group" aria-label="Celestial body">
+        <button type="button" data-body="mars" aria-pressed="true">Mars</button>
+        <button type="button" data-body="moon" aria-pressed="false">Moon</button>
+      </div>
+      <label class="visually-hidden" for="target-select">Reference site</label>
+      <select id="target-select"></select>
+    </div>
+    <nav class="stats" aria-label="Dataset summary">
+      <span><b id="stat-windows">…</b> land windows scanned</span>
+      <span><b id="stat-sites">…</b> known analogs</span>
+      <span><b id="stat-targets">…</b> targets</span>
+      <a href="#method">Method &amp; data ↓</a>
+    </nav>
+  </header>
+
+  <div id="app-error" class="app-error" role="alert" hidden></div>
+
+  <main class="layout">
+    <aside class="panel controls" aria-label="Target and feature weights">
+      <section id="target-card" class="target-card"></section>
+
+      <section class="block objective-block">
+        <h3><label for="objective">Mission objective</label></h3>
+        <select id="objective"></select>
+        <p id="objective-why" class="muted small objective-why"></p>
+      </section>
+
+      <section class="block">
+        <div class="block-head"><h3>Feature importance</h3><button type="button" id="weights-reset" class="link">Reset</button></div>
+        <div id="weights"></div>
+        <p id="weights-warning" class="warning" hidden>Set at least one weight above 0 to rank locations.</p>
+      </section>
+
+      <section class="block">
+        <h3>Show on map</h3>
+        <label class="check"><input type="checkbox" id="show-candidates" checked> <span class="legend-dot"></span> Newly identified candidates</label>
+        <label class="check"><input type="checkbox" id="show-established" checked> <span class="legend-diamond"></span> Established analog sites</label>
+        <label class="check filter"><input type="checkbox" id="bare-only"> <span id="bare-only-label">Bare ground only</span></label>
+        <p class="muted small hint">Moon and Mars surfaces are bare. This hides candidates that are mostly vegetated (ESA WorldCover).</p>
+        <div class="legend">
+          <span><i style="background:#7ee2b0"></i><span id="legend-close">close</span></span>
+          <span><i style="background:#f0c96a"></i><span id="legend-moderate">moderate</span></span>
+          <span><i style="background:#f08a6a"></i><span id="legend-far">weak</span></span>
+        </div>
+      </section>
+    </aside>
+
+    <section class="center">
+      <div id="map" class="panel map" role="region" aria-label="Map of Earth analog locations"></div>
+      <section id="detail" class="panel detail" aria-live="polite"></section>
+    </section>
+
+    <aside class="panel ranking-panel" aria-label="Ranked Earth locations">
+      <div class="block-head"><h3>Most similar on Earth</h3><span id="ranking-count" class="muted"></span></div>
+      <p class="muted small">Re-ranked live with your weights. Lower σ = more similar terrain.</p>
+      <ol id="ranking" class="ranking"></ol>
+    </aside>
+  </main>
+
+  <section id="method" class="panel method" aria-labelledby="method-title">
+    <h2 id="method-title">Method, validation &amp; data sources</h2>
+    <div id="method-body"></div>
+  </section>
+
+  <footer class="footer">
+    GeoProxy · NASA Space Apps Challenge 2026 · Data: NASA (MOLA, LOLA, POWER, GIBS), ESA (Copernicus DEM, WorldCover), NOAA (ETOPO 2022), Macrostrat.
+    Terrain similarity only. Not a claim that conditions are equivalent.
+  </footer>
+</body>
+</html>

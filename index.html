@@ -39,7 +39,7 @@
             <p class="kicker"><span class="signal" aria-hidden="true"></span> Welcome to GeoProxy</p>
             <h1>The Moon. Mars.<br><em>Here on Earth.</em></h1>
             <p class="lede">Which landscapes on Earth can help us explore other worlds? Explore named analog landscapes for the Moon and Mars, discover terrain matches, and visit the lunar south pole.</p>
-            <div class="actions"><a class="button" href="#explorer">Find terrain matches <span aria-hidden="true">↗</span></a><a class="plain-link" href="#analogs">Explore Earth analogs <span aria-hidden="true">→</span></a><a class="plain-link moon-link" href="#moon">Explore the Moon <span aria-hidden="true">→</span></a></div>
+            <div class="actions"><a class="button" href="field-map.html">Compare sites on the field map ↗</a><a class="button" href="#explorer">Find terrain matches <span aria-hidden="true">↗</span></a><a class="plain-link" href="#analogs">Explore Earth analogs <span aria-hidden="true">→</span></a><a class="plain-link moon-link" href="#moon">Explore the Moon <span aria-hidden="true">→</span></a></div>
           </div>
         </div>
         <a class="photo-credit" href="https://science.nasa.gov/resource/apollo-8s-iconic-earthrise/">Earthrise · Apollo 8 · NASA / Bill Anders ↗</a>
@@ -114,7 +114,7 @@
 
 <section id="explorer" class="shell explorer" data-view hidden>
 <div class="section-hero" style="--hero-image:url('data/viking-orbital.jpg')"><p class="kicker">Moon and Mars · Global analog search</p><h1>Find an Earth analog</h1><a class="section-credit" href="https://www.mars.asu.edu/data/mdim_color/" target="_blank" rel="noopener">NASA Viking Orbiter / ASU ↗</a></div>
-<label for="target">Choose a planetary region or mission site</label><select id="target"></select><p id="count" role="status">Loading candidates…</p>
+<p><a href="field-map.html">Open the field map and compare established analogs ↗</a></p><label for="target">Choose a planetary region or mission site</label><select id="target"></select><p id="count" role="status">Loading candidates…</p>
 <nav class="match-tabs" aria-label="Explorer tools"><a href="#explorer">Ranked matches</a><a href="#weights">Feature weights</a><a href="#saved">Saved comparisons</a></nav>
 <div id="ranked"><div class="flight-stage panel"><div class="universe"><canvas id="sphere" class="sphere" width="300" height="300" tabindex="0"></canvas><span class="scan-ring" aria-hidden="true"></span><div id="caption" class="caption"></div></div><div class="detail"><p class="kicker">Analog search</p><h2 id="flight-title">Planetary target</h2><p id="flight-status" role="status"></p><div class="flight-buttons"><button id="planet-view">Target globe</button><button id="earth-view">Earth globe</button><button id="recenter">Recenter</button></div><small>Drag or use arrow keys. Select a marker to inspect its mission.</small><p id="flight-center" class="legend"></p><p id="flight-hover" class="legend"></p></div></div>
 <div class="work"><section class="panel"><div class="bar"><h2>Earth candidates</h2></div><div id="results"></div></section><section class="panel"><div class="bar"><h2>Similarity profile</h2><button id="save-site">Save comparison</button></div><div id="score-bars"></div><div id="detail" class="detail"></div></section></div></div>

@@ -92,6 +92,11 @@ function details() {
   if(target.id==='shackleton-crater'){
     const illumination=document.createElement('a');illumination.href='data/shackleton.png';illumination.target='_blank';illumination.rel='noopener';illumination.textContent='View lunar south pole illumination map ↗';$('#detail').append(illumination);
   }
+  const note=text=>{const p=document.createElement('p');p.textContent=text;$('#detail').append(p);};
+  note('Discovery dataset v'+data.schema_version+' · '+(c.landform?'Landform: '+c.landform.earth+' versus '+c.landform.target+' ('+c.landform.verdict+').':'Landform verdict unavailable in this export.'));
+  if(target.id.includes('elysium'))note('Elysium slope and roughness approach the measurement limit; interpret this match cautiously.');
+  for(const [key,v] of Object.entries(literature[target.id]||{}))note(key.replace('temp_', '').replace('_c','')+' temperature: '+v.value+' °C. '+v.citation);
+  if(literature[target.id])note('Planetary temperatures are context only: lunar surface, Martian near-surface air and Earth air measurements differ.');
   $('#save-site').textContent='Save comparison';
   showGlobe();
 }
@@ -173,6 +178,8 @@ $('#recenter').onclick=()=>{manualView();globe.recenter();};
 $('#earth-view').onclick=()=>{body='earth';manualView();showGlobe();};
 $('#planet-view').onclick=()=>{body=target.body;manualView();showGlobe();};
 window.addEventListener('hashchange',tabs);
+let literature={};
+fetch('data/literature.json').then(r=>r.json()).then(v=>{literature=v;if(chosen)rank();}).catch(()=>{});
 fetch('data/discoveries.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(d=>{
   data=d;$('#atlas').replaceChildren();
   for(const t of data.targets){
