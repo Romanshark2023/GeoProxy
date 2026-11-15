@@ -99,7 +99,8 @@ Note: in `discoveries.json` the features are **plain numbers**, not `{value, uni
 | `pct_a` | "More similar than 99.996% of Earth's land" (from the 1 km global scan) |
 | `rank_median`, `rank_worst`, `stability` | Robustness: its rank on Earth across 200 random weightings. A small `rank_worst` means a robust result |
 | `features_500m` | The candidate's three terrain values |
-| `comparison.<feature>` | `{earth, target, z, verdict}`. Use it for the radar chart and the **HOLDS / BREAKS** list |
+| `comparison.<feature>` | `{earth, target, factor, direction, z, verdict}`. `factor` is how many times larger/smaller Earth's value is (always ≥ 1); `direction` is `higher`/`lower`. The verdict comes from the factor (see the verdict rule below). Use it for the radar chart and the **HOLDS / BREAKS** list |
+| `bare_ground` | `{fraction, verdict}`: share of bare ground (ESA WorldCover). Moon and Mars are 100% bare, so it is compared directly |
 | `geology` | `unit` (map unit name), `classes`, `verdict` (`holds` / `partial` / `breaks` / `unknown`), `confidence` (`low` means classified only from a long description, so show "?"), `reference` (map citation) |
 | `land_cover` | Shares (0–1) of `bare_sparse`, `tree`, `grass`, `snow_ice`, `water`, ... Show "bare ground 89%" |
 | `climate` | Earth context only (not scored) |
@@ -140,15 +141,29 @@ function similarity(earth, target, weights, method) {
   return { distance: Math.sqrt(num / wsum), z };      // smaller distance = more similar
 }
 
-const verdict = z => (Math.abs(z) < 0.5 ? "holds" : Math.abs(z) < 1 ? "partial" : "breaks");
+// Verdict rule: read it from discoveries.method.verdict_rule (single source of truth).
+// A feature holds if Earth and target are within x1.5 of each other, partial within x2, otherwise breaks.
+function featureVerdict(e, t, k, method) {
+  const eps = method.eps[k], rule = method.verdict_rule;
+  const r = (e + eps) / (t + eps);
+  const factor = r >= 1 ? r : 1 / r;                  // e.g. 1.70 = "x1.70 steeper/gentler"
+  const verdict = factor <= rule.factor_hold ? "holds" : factor <= rule.factor_partial ? "partial" : "breaks";
+  return { factor, direction: r >= 1 ? "higher" : "lower", verdict };
+}
+
+// Bare ground (Moon/Mars are 100% bare): >= bare_hold holds, >= bare_partial partial, otherwise breaks.
+const bareVerdict = (fraction, rule) =>
+  fraction >= rule.bare_hold ? "holds" : fraction >= rule.bare_partial ? "partial" : "breaks";
 ```
+
+The same ratio thresholds, converted to σ (`log10(1.5)` and `log10(2)` divided by the mean of `earth_variability_scale`, about **0.28 σ** and **0.48 σ**), give the bands for the overall distance: close, moderate, weak.
 
 - **Inputs:** use 500 m values everywhere:
   - Candidates: `candidate.features_500m`.
   - Targets: `discoveries.targets[i].features_500m`, or the `.value`s in `targets.json` (same numbers).
   - Established sites: the `.value`s in `sites.json`.
 - **Re-rank** candidates and established sites together by `distance` when sliders move.
-- **`z`** is "how many Earth-variability units apart". Feed `|z|` into the radar chart, or plot the raw `earth` vs `target` values on a log scale.
+- **`z`** is "how many Earth-variability units apart". It drives the overall distance; the per-feature verdicts use the plain `factor`, which is easier to explain ("×1.70 gentler").
 - **Percentiles (`pct_a`) can't be recomputed in the browser** (that needs all 318,539 windows). Show `pct_a` as "global screen, equal weights" and the live `distance` as "your weighting".
 
 ---
