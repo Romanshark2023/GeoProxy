@@ -174,7 +174,7 @@ function drawRadar(canvas, e, target, data) {
       ],
     },
     options: {
-      responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
+      responsive: true, maintainAspectRatio: false, animation: false,
       scales: { r: { min: 0, max: 1, ticks: { display: false, stepSize: 0.25 },
         grid: { color: "rgba(160,190,205,0.18)" }, angleLines: { color: "rgba(160,190,205,0.18)" },
         pointLabels: { color: "#c6d6de", font: { size: 12 } } } },

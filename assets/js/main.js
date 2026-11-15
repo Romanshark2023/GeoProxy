@@ -86,6 +86,8 @@ function applyObjective(id) {
   update({ fit: true, autoselect: true });
 }
 
+let weightFrame = null;
+
 function buildWeights() {
   const wrap = $("#weights");
   wrap.innerHTML = KEYS.map(k => `
@@ -97,7 +99,11 @@ function buildWeights() {
     </label>`).join("");
   wrap.querySelectorAll("input").forEach(inp => inp.addEventListener("input", () => {
     state.weights[inp.dataset.key] = Number(inp.value);
-    update({});
+    if (weightFrame !== null) return;
+    weightFrame = requestAnimationFrame(() => {
+      weightFrame = null;
+      update({});
+    });
   }));
   $("#weights-reset").addEventListener("click", () => {
     state.weights = { ...objective().weights };

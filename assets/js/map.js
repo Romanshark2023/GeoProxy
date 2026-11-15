@@ -28,34 +28,44 @@ export function createMap(el, onSelect) {
   const markers = new Map();
 
   function render(rows, selectedKey) {
-    layer.clearLayers();
-    markers.clear();
+    const activeKeys = new Set(rows.map(row => row.entry.key));
+    for (const [key, marker] of markers) {
+      if (!activeKeys.has(key)) {
+        layer.removeLayer(marker);
+        markers.delete(key);
+      }
+    }
     // Draw weak matches first so the best ones sit on top.
     [...rows].reverse().forEach(row => {
       const e = row.entry;
       const selected = e.key === selectedKey;
-      let m;
+      let m = markers.get(e.key);
       if (e.kind === "established") {
         const icon = L.divIcon({
           className: "",
           html: `<span class="pin-known${selected ? " is-selected" : ""}" style="--c:${distanceColor(row.distance)}"></span>`,
           iconSize: [18, 18], iconAnchor: [9, 9],
         });
-        m = L.marker([e.lat, e.lon], { icon, keyboard: true, title: e.name });
+        if (m) m.setIcon(icon);
+        else m = L.marker([e.lat, e.lon], { icon, keyboard: true, title: e.name });
       } else {
-        m = L.circleMarker([e.lat, e.lon], {
+        const style = {
           radius: selected ? 10 : 7,
           color: selected ? "#ffffff" : "#08131b",
           weight: selected ? 3 : 1.5,
           fillColor: distanceColor(row.distance),
           fillOpacity: e.excluded ? 0.35 : 0.95,
           dashArray: e.excluded ? "3 3" : null,
-        });
+        };
+        if (m) m.setStyle(style);
+        else m = L.circleMarker([e.lat, e.lon], style);
       }
       const sub = e.kind === "established" ? "Established analog" : (e.excluded ? "Excluded candidate" : `Candidate #${row.rank}`);
       m.bindTooltip(`<strong>${escapeHtml(e.name)}</strong><br>${sub}${row.distance != null ? ` · ${row.distance.toFixed(2)} σ` : ""}`, { direction: "top", offset: [0, -6] });
-      m.on("click", () => onSelect(e.key));
-      m.addTo(layer);
+      if (!markers.has(e.key)) {
+        m.on("click", () => onSelect(e.key));
+        m.addTo(layer);
+      }
       markers.set(e.key, m);
     });
   }
