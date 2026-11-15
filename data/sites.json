@@ -1,6 +1,6 @@
 {
   "schema_version": "0.2",
-  "generated_utc": "2026-11-14T15:38:32+00:00",
+  "generated_utc": "2026-11-15T01:07:36+00:00",
   "method": {
     "window_km": 20,
     "pixel_m": 500,
@@ -394,6 +394,558 @@
         },
         "precip_mm_day": {
           "value": 4.41,
+          "unit": "mm/day",
+          "method": "modelled",
+          "source": "nasa-power"
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": 0.0,
+        "errors": []
+      }
+    },
+    {
+      "id": "meteor-crater",
+      "body": "earth",
+      "name": "Meteor Crater (Barringer)",
+      "region": "Arizona, USA",
+      "lat": 35.027,
+      "lon": -111.022,
+      "analog_for": [
+        "moon",
+        "mars"
+      ],
+      "notes": "Simple impact crater about 1.2 km wide; Apollo astronaut training site. Crater is small compared with the 20 km window.",
+      "features": {
+        "relief_m": {
+          "value": 162.32,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "slope_deg": {
+          "value": 0.69,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "roughness_m": {
+          "value": 5.42,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "temp_mean_c": {
+          "value": 11.36,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_min_c": {
+          "value": -22.36,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_max_c": {
+          "value": 37.83,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "precip_mm_day": {
+          "value": 1.14,
+          "unit": "mm/day",
+          "method": "modelled",
+          "source": "nasa-power"
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": 0.0,
+        "errors": []
+      }
+    },
+    {
+      "id": "ries-crater",
+      "body": "earth",
+      "name": "Nördlinger Ries",
+      "region": "Bavaria, Germany",
+      "lat": 48.88,
+      "lon": 10.56,
+      "analog_for": [
+        "moon"
+      ],
+      "notes": "About 24 km complex impact crater; Apollo 14 crew geology training site.",
+      "features": {
+        "relief_m": {
+          "value": 67.63,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "slope_deg": {
+          "value": 0.57,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "roughness_m": {
+          "value": 7.46,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "temp_mean_c": {
+          "value": 8.74,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_min_c": {
+          "value": -19.07,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_max_c": {
+          "value": 36.32,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "precip_mm_day": {
+          "value": 2.05,
+          "unit": "mm/day",
+          "method": "modelled",
+          "source": "nasa-power"
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": 0.0,
+        "errors": []
+      }
+    },
+    {
+      "id": "askja-iceland",
+      "body": "earth",
+      "name": "Askja caldera",
+      "region": "Highlands, Iceland",
+      "lat": 65.05,
+      "lon": -16.75,
+      "analog_for": [
+        "moon",
+        "mars"
+      ],
+      "notes": "Basaltic volcanic highland; Apollo astronaut training site (1965, 1967).",
+      "features": {
+        "relief_m": {
+          "value": 496.2,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "slope_deg": {
+          "value": 3.48,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "roughness_m": {
+          "value": 35.62,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "temp_mean_c": {
+          "value": -2.84,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_min_c": {
+          "value": -23.83,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_max_c": {
+          "value": 10.31,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "precip_mm_day": {
+          "value": 2.36,
+          "unit": "mm/day",
+          "method": "modelled",
+          "source": "nasa-power"
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": 0.0,
+        "errors": []
+      }
+    },
+    {
+      "id": "lonar-crater",
+      "body": "earth",
+      "name": "Lonar crater",
+      "region": "Maharashtra, India",
+      "lat": 19.976,
+      "lon": 76.508,
+      "analog_for": [
+        "moon",
+        "mars"
+      ],
+      "notes": "Impact crater in basalt; compared with craters in lunar and Martian basalts.",
+      "features": {
+        "relief_m": {
+          "value": 66.05,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "slope_deg": {
+          "value": 0.76,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "roughness_m": {
+          "value": 6.85,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "temp_mean_c": {
+          "value": 25.96,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_min_c": {
+          "value": 6.08,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_max_c": {
+          "value": 45.55,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "precip_mm_day": {
+          "value": 2.31,
+          "unit": "mm/day",
+          "method": "modelled",
+          "source": "nasa-power"
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": 0.0,
+        "errors": []
+      }
+    },
+    {
+      "id": "mdrs-utah",
+      "body": "earth",
+      "name": "Mars Desert Research Station",
+      "region": "Utah, USA",
+      "lat": 38.406,
+      "lon": -110.792,
+      "analog_for": [
+        "mars"
+      ],
+      "notes": "Long-running Mars simulation habitat in a sedimentary desert.",
+      "features": {
+        "relief_m": {
+          "value": 120.38,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "slope_deg": {
+          "value": 1.49,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "roughness_m": {
+          "value": 14.22,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "temp_mean_c": {
+          "value": 11.75,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_min_c": {
+          "value": -19.96,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_max_c": {
+          "value": 41.12,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "precip_mm_day": {
+          "value": 0.66,
+          "unit": "mm/day",
+          "method": "modelled",
+          "source": "nasa-power"
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": 0.0,
+        "errors": []
+      }
+    },
+    {
+      "id": "rio-tinto",
+      "body": "earth",
+      "name": "Río Tinto",
+      "region": "Huelva, Spain",
+      "lat": 37.69,
+      "lon": -6.59,
+      "analog_for": [
+        "mars"
+      ],
+      "notes": "Acidic, iron-rich river system; chemistry analog for Martian sulfate deposits.",
+      "features": {
+        "relief_m": {
+          "value": 219.33,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "slope_deg": {
+          "value": 2.98,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "roughness_m": {
+          "value": 27.85,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "temp_mean_c": {
+          "value": 17.91,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_min_c": {
+          "value": -4.53,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_max_c": {
+          "value": 45.03,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "precip_mm_day": {
+          "value": 1.24,
+          "unit": "mm/day",
+          "method": "modelled",
+          "source": "nasa-power"
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": 0.0,
+        "errors": []
+      }
+    },
+    {
+      "id": "pilbara-dresser",
+      "body": "earth",
+      "name": "Pilbara, Dresser Formation",
+      "region": "Western Australia",
+      "lat": -21.15,
+      "lon": 119.42,
+      "analog_for": [
+        "mars"
+      ],
+      "notes": "About 3.5 billion-year-old stromatolites; astrobiology analog for Jezero. Coordinates approximate.",
+      "features": {
+        "relief_m": {
+          "value": 86.23,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "slope_deg": {
+          "value": 1.07,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "roughness_m": {
+          "value": 9.93,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "temp_mean_c": {
+          "value": 27.5,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_min_c": {
+          "value": 6.49,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_max_c": {
+          "value": 48.95,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "precip_mm_day": {
+          "value": 1.11,
+          "unit": "mm/day",
+          "method": "modelled",
+          "source": "nasa-power"
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": 0.0,
+        "errors": []
+      }
+    },
+    {
+      "id": "namib-sossusvlei",
+      "body": "earth",
+      "name": "Sossusvlei dunes",
+      "region": "Namib Desert, Namibia",
+      "lat": -24.73,
+      "lon": 15.29,
+      "analog_for": [
+        "mars"
+      ],
+      "notes": "Large active dune field; analog for Martian aeolian (wind) landforms.",
+      "features": {
+        "relief_m": {
+          "value": 179.97,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "slope_deg": {
+          "value": 2.63,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "roughness_m": {
+          "value": 27.54,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "temp_mean_c": {
+          "value": 20.99,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_min_c": {
+          "value": 3.37,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_max_c": {
+          "value": 44.04,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "precip_mm_day": {
+          "value": 0.15,
+          "unit": "mm/day",
+          "method": "modelled",
+          "source": "nasa-power"
+        }
+      },
+      "qc": {
+        "coverage": 1.0,
+        "sea_fraction": 0.0,
+        "errors": []
+      }
+    },
+    {
+      "id": "vinson-massif",
+      "body": "earth",
+      "name": "Vinson Massif",
+      "region": "Ellsworth Mountains, Antarctica",
+      "lat": -78.525,
+      "lon": -85.617,
+      "analog_for": [
+        "moon"
+      ],
+      "notes": "Steep polar mountains with low sun angles. Team hypothesis: terrain test for Shackleton crater walls.",
+      "features": {
+        "relief_m": {
+          "value": 2147.62,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "slope_deg": {
+          "value": 16.67,
+          "unit": "degrees",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "roughness_m": {
+          "value": 154.15,
+          "unit": "m",
+          "method": "measured",
+          "source": "copernicus-glo90"
+        },
+        "temp_mean_c": {
+          "value": -28.35,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_min_c": {
+          "value": -53.2,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "temp_max_c": {
+          "value": -6.24,
+          "unit": "°C",
+          "method": "modelled",
+          "source": "nasa-power"
+        },
+        "precip_mm_day": {
+          "value": 0.86,
           "unit": "mm/day",
           "method": "modelled",
           "source": "nasa-power"

@@ -163,10 +163,9 @@ const verdict = z => (Math.abs(z) < 0.5 ? "holds" : Math.abs(z) < 1 ? "partial" 
 
 ## 6. Known gaps (as of this commit)
 
-1. **`sites.json` has only 5 sites.** The pipeline notebook was extended to 14 sites but not re-run yet. Re-run `colab/geoproxy_pipeline.ipynb` and replace `sites.json` and `targets.json`. The format stays the same.
-2. **Moon/Mars climate is `missing`.** Values from papers can be added in the pipeline's `LITERATURE` setting (with a citation).
-3. **Rock type is a point lookup** at the window centre, not proportions; detail varies by country.
-4. Schema versions differ (`0.2` for sites/targets, `0.1` for discoveries); field names are stable as documented here.
+1. **Moon/Mars climate is `missing`.** Values from papers can be added in the pipeline's `LITERATURE` setting (with a citation).
+2. **Rock type is a point lookup** at the window centre, not proportions; detail varies by country.
+3. Schema versions differ (`0.2` for sites/targets, `0.1` for discoveries); field names are stable as documented here.
 
 ## 7. Updating the data
 
@@ -174,4 +173,10 @@ const verdict = z => (Math.abs(z) < 0.5 ? "holds" : Math.abs(z) < 1 ? "partial" 
 2. Download the JSON it produces.
 3. Put it in this folder, and commit with the SHA-256 the notebook prints, so the file can be traced.
 
-Current `discoveries.json`: SHA-256 `36aaa1950ca4c78c3bd888f702708a252f814923b9fdaedcc1fc26fea9227f8c`.
+Current files (SHA-256):
+
+| File | Contents | SHA-256 |
+|---|---|---|
+| `sites.json` | 14 established Earth analog sites | `85536856442b5dd06d41f549663bb1db038efc6a34f3c243186a22a613566ac6` |
+| `targets.json` | 5 Moon/Mars targets | `494ba4e86b68e866089b2ca7e999b9acf8b07d3b3e591bfbe21314734e11ea5d` |
+| `discoveries.json` | global search, 20 candidates per target | `36aaa1950ca4c78c3bd888f702708a252f814923b9fdaedcc1fc26fea9227f8c` |
