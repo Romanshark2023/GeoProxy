@@ -23,7 +23,7 @@ This folder holds everything the web app needs. All files are **static JSON**, s
 
 Absolute elevation is **deliberately absent**: height references differ between Earth, Mars and the Moon. The same three features are measured the same way on every body (20 km window, 500 m grid), so they are directly comparable.
 
-Environment features (`temp_mean_c`, `temp_min_c`, `temp_max_c`, `precip_mm_day`) exist **for Earth only** (NASA POWER climate model, ~50 km grid). For Moon/Mars targets they are currently `"method": "missing"`. Show them as context; **do not score them**.
+Environment features (`temp_mean_c`, `temp_min_c`, `temp_max_c`, `precip_mm_day`): Earth values come from NASA POWER (climate model, ~50 km grid, `"method": "modelled"`). Moon/Mars targets carry published measurements where we have a checked source (`"method": "literature"`, with a `citation` field — show it): Apollo 11 / Mare Tranquillitatis (NASA Moon Fact Sheet, equatorial **surface** temperature 95–390 K), Shackleton (Kaguya: shadowed interior ~90 K; the sunlit rim is far warmer) and Jezero (MEDA early-mission diurnal range). Gale and Elysium are still `"missing"`. **Caveat to display:** Moon values are surface temperatures (no atmosphere), Mars values are near-surface air, Earth values are 2 m air — context only, **do not score them**.
 
 ---
 
@@ -62,13 +62,13 @@ Both files share a header and differ only in the list name (`sites` vs `targets`
 
 ---
 
-## 3. `discoveries.json` (schema 0.1)
+## 3. `discoveries.json` (schema 0.2)
 
 ```jsonc
 {
-  "scope":  { "mode": "global", "valid_land_windows": 318539, ... },
+  "scope":  { "mode": "global", "valid_land_windows": ..., ... },
   "method": {
-    "eps": { "relief_m": 1.0, "slope_deg": 0.01, "roughness_m": 0.1 },
+    "eps": { "relief_m": 5.0, "slope_deg": 0.2, "roughness_m": 2.0 },   // ≈ measurement noise floors (see eps_rationale)
     "earth_variability_scale": { "relief_m": 0.6265, "slope_deg": 0.6304, "roughness_m": 0.6498 },
     "weights": { ... }, "score": "...", "stability": "...", "ranking": "...", ...   // human-readable method text
   },
@@ -80,6 +80,7 @@ Both files share a header and differ only in the list name (`sites` vs `targets`
       "id": "jezero-crater", "name": "Jezero Crater", "body": "mars", "lat": 18.38, "lon": 77.58,
       "features_500m": { "relief_m": 140.86, "slope_deg": 0.66, "roughness_m": 6.28 },   // plain numbers here
       "features_1km":  { ... },
+      "skew_500m": -0.42, "landform_500m": "basin-like",   // elevation skewness: basin-like / peak-like / mixed-flat
       "geology": { "primary": ["volcanic", "plutonic"], "secondary": ["sedimentary"], "summary": "...", "citation": "..." },
       "candidates": [ ... 20 objects, already in final order ... ]
     }
@@ -99,7 +100,8 @@ Note: in `discoveries.json` the features are **plain numbers**, not `{value, uni
 | `pct_a` | "More similar than 99.996% of Earth's land" (from the 1 km global scan) |
 | `rank_median`, `rank_worst`, `stability` | Robustness: its rank on Earth across 200 random weightings. A small `rank_worst` means a robust result |
 | `features_500m` | The candidate's three terrain values |
-| `comparison.<feature>` | `{earth, target, factor, direction, z, verdict}`. `factor` is how many times larger/smaller Earth's value is (always ≥ 1); `direction` is `higher`/`lower`. The verdict comes from the factor (see the verdict rule below). Use it for the radar chart and the **HOLDS / BREAKS** list |
+| `comparison.<feature>` | `{earth, target, factor, direction, z, verdict}`. `factor` is how many times larger/smaller Earth's value is (always ≥ 1, after adding `eps` — differences below the measurement noise floor don't count); `direction` is `higher`/`lower`. The verdict comes from the factor (see the verdict rule below). Use it for the radar chart and the **HOLDS / BREAKS** list |
+| `landform` | `{earth_skew, target_skew, earth, target, verdict}`. Landform class from elevation skewness: `basin-like` (crater, depression), `peak-like` (volcano, massif) or `mixed/flat`. `verdict`: holds = same class as the target, partial = one is mixed/flat, breaks = basin vs peak. This is what tells a crater analog from a volcano of the same size — show it next to the terrain verdicts |
 | `bare_ground` | `{fraction, verdict}`: share of bare ground (ESA WorldCover). Moon and Mars are 100% bare, so it is compared directly |
 | `geology` | `unit` (map unit name), `classes`, `verdict` (`holds` / `partial` / `breaks` / `unknown`), `confidence` (`low` means classified only from a long description, so show "?"), `reference` (map citation) |
 | `land_cover` | Shares (0–1) of `bare_sparse`, `tree`, `grass`, `snow_ice`, `water`, ... Show "bare ground 89%" |
@@ -107,7 +109,7 @@ Note: in `discoveries.json` the features are **plain numbers**, not `{value, uni
 | `nearest_known_site` | `{id, name, distance_km}` to the nearest established analog |
 | `near_known_site` | Site id if within 50 km (it's an established analog), else `null` |
 | `novelty` | Ready-made honest sentence. Show it as is |
-| `excluded` | `null`, or a reason such as `"glaciated: 76% snow/ice in ESA WorldCover"`. Show excluded candidates greyed out, not ranked |
+| `excluded` | `null`, or a reason such as `"glaciated: 76% snow/ice in ESA WorldCover"` or `"water body: 34% water in ESA WorldCover"`. Show excluded candidates greyed out, not ranked. Most candidates never get this far: a pre-filter (`method.surface_prefilter`) already requires ≥30% bare ground, ≤30% snow/ice and ≤20% water before confirmation |
 | `errors` | Usually empty; if not, show a small warning |
 
 Candidates have **no `id`**. Use `` `${target.id}#${index}` `` as a key.
@@ -118,7 +120,7 @@ Wording for the UI: call them **"newly identified candidate analogues"**, never 
 
 ## 4. Similarity in the browser (for the weight sliders)
 
-This is the exact formula the notebooks use (`discoveries.method`). It was checked against the notebook's output for Jezero's #1 candidate: 0.034565 here vs 0.034564 in the notebook (the gap comes from rounding of `earth_variability_scale` in the JSON).
+This is the exact formula the notebooks use (`discoveries.method`). It was checked against the notebook's output for Jezero's #1 candidate (agreement to 5 decimals; the tiny gap comes from rounding of `earth_variability_scale` in the JSON). Always read `eps` and `earth_variability_scale` from `discoveries.method` — never hard-code them; they changed in schema 0.2 (eps now ≈ measurement noise floors).
 
 ```js
 const KEYS = ["relief_m", "slope_deg", "roughness_m"];
@@ -178,9 +180,10 @@ The same ratio thresholds, converted to σ (`log10(1.5)` and `log10(2)` divided 
 
 ## 6. Known gaps (as of this commit)
 
-1. **Moon/Mars climate is `missing`.** Values from papers can be added in the pipeline's `LITERATURE` setting (with a citation).
+1. **Gale and Elysium climate is still `missing`** (Apollo 11, Shackleton and Jezero now carry cited literature values). More can be added in the pipeline's `LITERATURE` setting, always with a citation.
 2. **Rock type is a point lookup** at the window centre, not proportions; detail varies by country.
-3. Schema versions differ (`0.2` for sites/targets, `0.1` for discoveries); field names are stable as documented here.
+3. **Elysium's roughness (~1.9 m) and slope (~0.26°) sit at the measurement noise floor** of the source DEMs. The eps floors in schema 0.2 keep sub-floor differences from scoring, but Elysium matches remain the weakest claims — say so in the UI.
+4. Both notebooks changed on 2026-11-15 (land below sea level kept, bare-ground pre-filter, landform verdicts, eps noise floors): the JSON data files must be **regenerated in Colab** before the new fields exist. Until then the committed data files are from the previous method version.
 
 ## 7. Updating the data
 
@@ -188,7 +191,7 @@ The same ratio thresholds, converted to σ (`log10(1.5)` and `log10(2)` divided 
 2. Download the JSON it produces.
 3. Put it in this folder, and commit with the SHA-256 the notebook prints, so the file can be traced.
 
-Current files (SHA-256):
+Current files (SHA-256) — **from the previous method version**; replace this table when the 2026-11-15 notebooks are rerun:
 
 | File | Contents | SHA-256 |
 |---|---|---|
