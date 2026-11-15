@@ -20,6 +20,7 @@
       <a class="brand" href="#overview" aria-label="GeoProxy overview"><span class="brand-mark" aria-hidden="true"></span>GeoProxy</a>
       <nav aria-label="Project guide">
         <a href="#overview" aria-current="page">Welcome</a>
+        <a href="field-map.html">Field map</a>
         <a href="#how-it-works">How it works</a>
         <a href="#analogs">Earth atlas</a>
         <a href="#missions">Missions</a><a href="#why">Why</a><a href="#about">About</a>
@@ -114,8 +115,8 @@
 
 <section id="explorer" class="shell explorer" data-view hidden>
 <div class="section-hero" style="--hero-image:url('data/viking-orbital.jpg')"><p class="kicker">Moon and Mars · Global analog search</p><h1>Find an Earth analog</h1><a class="section-credit" href="https://www.mars.asu.edu/data/mdim_color/" target="_blank" rel="noopener">NASA Viking Orbiter / ASU ↗</a></div>
-<p><a href="field-map.html">Open the field map and compare established analogs ↗</a></p><label for="target">Choose a planetary region or mission site</label><select id="target"></select><p id="count" role="status">Loading candidates…</p>
-<nav class="match-tabs" aria-label="Explorer tools"><a href="#explorer">Ranked matches</a><a href="#weights">Feature weights</a><a href="#saved">Saved comparisons</a></nav>
+<label for="target">Choose a planetary region or mission site</label><select id="target"></select><p id="count" role="status">Loading candidates…</p>
+<nav class="match-tabs" aria-label="Explorer tools"><a href="#explorer">Ranked matches</a><a href="field-map.html">Field map</a><a href="#weights">Feature weights</a><a href="#saved">Saved comparisons</a></nav>
 <div id="ranked"><div class="flight-stage panel"><div class="universe"><canvas id="sphere" class="sphere" width="300" height="300" tabindex="0"></canvas><span class="scan-ring" aria-hidden="true"></span><div id="caption" class="caption"></div></div><div class="detail"><p class="kicker">Analog search</p><h2 id="flight-title">Planetary target</h2><p id="flight-status" role="status"></p><div class="flight-buttons"><button id="planet-view">Target globe</button><button id="earth-view">Earth globe</button><button id="recenter">Recenter</button></div><small>Drag or use arrow keys. Select a marker to inspect its mission.</small><p id="flight-center" class="legend"></p><p id="flight-hover" class="legend"></p></div></div>
 <div class="work"><section class="panel"><div class="bar"><h2>Earth candidates</h2></div><div id="results"></div></section><section class="panel"><div class="bar"><h2>Similarity profile</h2><button id="save-site">Save comparison</button></div><div id="score-bars"></div><div id="detail" class="detail"></div></section></div></div>
 <section id="weight-panel" class="panel detail" hidden><h2>Feature weights</h2><p>Set importance from 0 to 5. Zero omits the criterion. Changes rerank the eligible shortlist.</p><div id="weight-controls"></div><label for="distance-goal">Desired distance from a catalogued settlement (km)</label><input type="number" id="distance-goal" min="1" max="1000" value="100"><button id="reset-model">Restore defaults</button></section>
