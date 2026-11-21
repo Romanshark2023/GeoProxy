@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0e0c">
+  <meta name="theme-color" content="#0a1525">
   <meta name="description" content="Explore the Moon and Mars, then investigate named landscapes on Earth with maps, satellite imagery and terrain measurements.">
   <title>GeoProxy · Planetary analog explorer</title>
   <link rel="stylesheet" href="site.css">
@@ -19,35 +19,42 @@
     <div class="shell masthead-inner">
       <a class="brand" href="#overview" aria-label="GeoProxy overview"><span class="brand-mark" aria-hidden="true"></span>GeoProxy</a>
       <nav aria-label="Project guide">
-        <a href="#overview" aria-current="page">Welcome</a>
+        <a href="#overview" aria-current="page">Overview</a>
         <a href="field-map.html">Field map</a>
         <a href="#how-it-works">How it works</a>
         <a href="#analogs">Earth atlas</a>
         <a href="#missions">Missions</a><a href="#why">Why</a><a href="#about">About</a>
-        <a href="#who-is-it-for">Who is it for?</a>
-        <a href="#conclusion">Conclusion</a>
+        <a href="#who-is-it-for">Who it’s for</a>
+        <a href="#conclusion">Analog limits</a>
       </nav>
-      <a class="header-launch" href="#explorer">Open explorer <span aria-hidden="true">↗</span></a>
+      <a class="header-launch" href="#explorer">Open explorer</a>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
     <section id="overview" data-view>
       <div class="hero">
-        <img class="welcome-photo" src="data/earthrise.jpg" alt="Earth rising above the Moon’s horizon, photographed from Apollo 8." fetchpriority="high" width="1840" height="1840">
         <div class="hero-inner shell">
           <div class="hero-copy">
-            <p class="kicker"><span class="signal" aria-hidden="true"></span> Welcome to GeoProxy</p>
-            <h1>The Moon. Mars.<br><em>Here on Earth.</em></h1>
-            <p class="lede">Which landscapes on Earth can help us explore other worlds? Explore named analog landscapes for the Moon and Mars, discover terrain matches, and visit the lunar south pole.</p>
-            <div class="actions"><a class="button" href="field-map.html">Compare sites on the field map ↗</a><a class="button" href="#explorer">Find terrain matches <span aria-hidden="true">↗</span></a><a class="plain-link" href="#analogs">Explore Earth analogs <span aria-hidden="true">→</span></a><a class="plain-link moon-link" href="#moon">Explore the Moon <span aria-hidden="true">→</span></a></div>
+            <p class="kicker">NASA Space Apps Challenge 2026</p>
+            <h1>Other worlds,<br><em>familiar ground.</em></h1>
+            <p class="lede">Where on Earth could a rover team rehearse a traverse of Jezero Crater? Pick a site on Mars or the Moon and compare the slopes, relief and roughness of its closest Earth matches.</p>
+            <div class="actions">
+              <a class="button" href="#explorer">Find a terrain match</a>
+              <a class="plain-link" href="field-map.html">Open the field map</a>
+            </div>
           </div>
+          <figure class="hero-plate">
+            <img class="welcome-photo" src="data/earthrise.jpg" alt="A blue and white Earth hangs just above the grey lunar horizon." fetchpriority="high" width="1840" height="1840">
+            <figcaption><span><em>Earthrise</em> · Apollo 8</span><a href="https://science.nasa.gov/resource/apollo-8s-iconic-earthrise/">NASA / Bill Anders</a></figcaption>
+          </figure>
         </div>
-        <a class="photo-credit" href="https://science.nasa.gov/resource/apollo-8s-iconic-earthrise/">Earthrise · Apollo 8 · NASA / Bill Anders ↗</a>
       </div>
       <div class="shell target-section">
-        <label for="home-regions">Explore Moon and Mars regions</label><select id="home-regions"><option value="">Choose a region or mission site…</option></select>
-        <div class="section-heading"><h2>Featured analog searches</h2><a href="#missions">Explore all planetary regions →</a><span class="micro">Moon &amp; Mars</span></div>
+        <div class="atlas-heading">
+          <div><p class="kicker">Moon &amp; Mars</p><h2>Choose a landscape</h2></div>
+          <div class="region-picker"><label for="home-regions">Browse all regions and missions</label><select id="home-regions"><option value="">Choose a region or mission site…</option></select></div>
+        </div>
         <div id="atlas" class="atlas" aria-label="Choose a planetary target">
           <a class="target-card lunar-card" href="#moon"><img src="data/shackleton.png" width="54" height="54" alt=""><span><strong>Shackleton crater</strong><span class="target-coord">Moon · Polar illumination</span></span><span class="card-arrow" aria-hidden="true">↗</span></a>
           <p id="atlas-status">Loading Mars targets…</p>
