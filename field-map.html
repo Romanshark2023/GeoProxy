@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a1525">
   <title>GeoProxy · Earth analogs for the Moon and Mars</title>
   <meta name="description" content="Find and compare places on Earth whose terrain resembles candidate Moon-base and Mars landing sites, using NASA, ESA and NOAA data.">
   <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
@@ -12,8 +13,10 @@
   <script type="module" src="assets/js/main.js"></script>
 </head>
 <body class="loading">
-  <header class="topbar"><a href="index.html#explorer" style="color:inherit">Globe explorer</a>
-    <div class="brand"><span class="logo" aria-hidden="true">◎</span> GeoProxy <small>Planetary analog explorer</small></div>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="GeoProxy overview"><span class="brand-mark" aria-hidden="true"></span>GeoProxy</a>
+    <span class="map-title">Field map</span>
+    <a class="explorer-link" href="index.html#explorer">Globe explorer</a>
     <div class="selector" role="group" aria-label="Choose a world and a reference site">
       <div class="seg" role="group" aria-label="Celestial body">
         <button type="button" data-body="mars" aria-pressed="true">Mars</button>

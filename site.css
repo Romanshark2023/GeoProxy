@@ -1,11 +1,11 @@
 :root {
   color-scheme: dark;
-  --bg: #0b0e0c;
-  --panel: #111612;
-  --line: #303830;
-  --dim: #b0b8ae;
-  --ink: #f2f4e9;
-  --accent: #c3f483;
+  --bg: #0a1525;
+  --panel: #112135;
+  --line: #344457;
+  --dim: #b9c6d5;
+  --ink: #f4f2ec;
+  --accent: #ffb18e;
   --mono: "IBM Plex Mono", Consolas, monospace;
   font: 16px/1.5 "Inter", "Segoe UI", Arial, sans-serif;
   background: var(--bg);
@@ -35,15 +35,8 @@ button { cursor: pointer }
 nav { gap: clamp(16px, 2.1vw, 34px); justify-content: center }
 nav a { padding: 26px 0; color: var(--dim); font-size: 14px; white-space: nowrap; border-bottom: 2px solid transparent }
 nav a[aria-current="page"] { color: var(--accent); border-color: var(--accent) }
-.header-launch { border: 1px solid #626d58; border-radius: 6px; font-size: 13px; font-weight: 600; gap: 18px; padding: 9px 15px; white-space: nowrap }
+.header-launch { border: 1px solid #607388; border-radius: 6px; font-size: 13px; font-weight: 600; gap: 18px; padding: 9px 15px; white-space: nowrap }
 .header-launch:hover, .header-launch[aria-current] { border-color: var(--accent); color: var(--accent) }
-.hero { overflow: hidden; isolation: isolate; position: relative; border-bottom: 1px solid var(--line); background: #050706 }
-.welcome-photo { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 74% }
-.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #060a07f0, #060a07ac 34%, transparent 58%), linear-gradient(0deg, #04090588, transparent 25%) }
-.hero-inner { min-height: clamp(485px, 40vw, 650px); display: flex; align-items: center }
-.hero-copy { padding: 60px 0 75px; width: min(49%, 660px) }
-.hero .lede { color: #d7dbd0 }
-.photo-credit { position: absolute; bottom: 13px; right: 4%; font: 10px/1.5 var(--mono); color: #e8eadf; text-decoration: none; text-shadow: 0 1px 5px #000 }
 .kicker, .micro, .caption, .rank, .target-coord, .photo-credit { font: 11px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .105em }
 .kicker { gap: 10px; color: var(--accent); font-weight: 600 }
 .signal { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px #b7ec7720 }
@@ -53,24 +46,24 @@ h1 em { color: var(--accent); font-style: normal }
 .lede { font-size: clamp(16px, 1.25vw, 19px); line-height: 1.6; max-width: 440px; color: var(--dim) }
 .actions { gap: clamp(18px, 2.4vw, 36px); margin-top: 28px; flex-wrap: wrap }
 .button, .plain-link { display: inline-flex; gap: 20px; font-size: 14px; font-weight: 600 }
-.button { color: #111a0d; background: var(--accent); padding: 13px 20px; border-radius: 5px }
-.button:hover { color: #111a0d; background: #d8ffa7 }
+.button { color: #17202d; background: var(--accent); padding: 13px 20px; border-radius: 5px }
+.button:hover { color: #17202d; background: #ffc9b0 }
 .button span, .plain-link span, .header-launch span { font: 19px/1 Arial, sans-serif }
 .plain-link { gap: 12px }
 i { font-style: normal; color: #7c886b }
 .target-section { padding-block: 33px 42px }
 .section-heading, .bar, .footer-inner { justify-content: space-between; gap: 16px }
 .section-heading h2 { font-size: clamp(26px, 2.4vw, 36px) }
-.micro, .caption, .rank, .target-coord { color: #a9b39f }
+.micro, .caption, .rank, .target-coord { color: #b6c8db }
 .micro span { padding-inline: 4px; color: #687360 }
 .atlas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr)); gap: 14px; margin-top: 20px }
-.target-card { background: linear-gradient(125deg, #191e17, var(--panel)); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: flex; align-items: center; gap: 16px; min-height: 94px }
-.target-card:hover { border-color: #889b67; background: #1b2218 }
+.target-card { background: linear-gradient(125deg, #172a40, var(--panel)); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: flex; align-items: center; gap: 16px; min-height: 94px }
+.target-card:hover { border-color: #91adc6; background: #1b3047 }
 .target-card canvas, .target-card img { width: 54px; height: 54px; border-radius: 5px; image-rendering: pixelated }
 .target-card strong { display: block; font-size: clamp(17px, 1.4vw, 21px); font-weight: 550; letter-spacing: -.035em }
 .target-coord { font-size: 10px; letter-spacing: .035em; display: block; margin-top: 4px }
 .card-arrow { margin-left: auto; color: var(--accent) }
-footer { border-top: 1px solid var(--line); color: #a2ab9c; font: 11px/1.6 var(--mono) }
+footer { border-top: 1px solid var(--line); color: #a8b8c9; font: 11px/1.6 var(--mono) }
 .footer-inner { min-height: 68px; padding-block: 12px }
 .footer-inner i { margin: 0 7px }
 .guide, .explorer { padding-block: clamp(35px, 5vw, 72px) }
@@ -91,9 +84,9 @@ footer { border-top: 1px solid var(--line); color: #a2ab9c; font: 11px/1.6 var(-
 .panel h2 { font-size: 21px }
 .bar { min-height: 68px; border-bottom: 1px solid var(--line); padding: 14px 20px }
 .worlds { gap: 5px }
-.worlds button, select { background: #192019; border: 1px solid #3c463a; color: var(--ink); border-radius: 5px; padding: 7px 10px; font-size: 13px }
-.worlds button.active { background: var(--accent); border-color: var(--accent); color: #111a0d }
-.universe { position: relative; min-height: 315px; display: grid; place-items: center; background: radial-gradient(ellipse, #2c3428, #0b0e0c 68%) }
+.worlds button, select { background: #182a40; border: 1px solid #475971; color: var(--ink); border-radius: 5px; padding: 7px 10px; font-size: 13px }
+.worlds button.active { background: var(--accent); border-color: var(--accent); color: #17202d }
+.universe { position: relative; min-height: 315px; display: grid; place-items: center; background: radial-gradient(ellipse, #233a54, #0a1525 68%) }
 .sphere { width: min(250px, 80%); height: auto; border-radius: 50%; cursor: grab; touch-action: none }
 .sphere:active { cursor: grabbing }
 .caption { position: absolute; bottom: 12px; font-size: 9px; text-align: center }
@@ -103,7 +96,7 @@ select { display: block; width: 100%; padding: 11px; margin-block: 6px 10px }
 .terrain { width: 100%; height: 76px; border-radius: 4px; image-rendering: pixelated; display: block; margin: 14px 0 }
 .results { padding-inline: 12px }
 .result { width: 100%; background: transparent; color: var(--ink); border: 0; border-bottom: 1px solid var(--line); padding: 10px; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 12px }
-.result:hover, .result.active { background: #212b1d }
+.result:hover, .result.active { background: #20364e }
 .result.active { box-shadow: inset 2px 0 var(--accent) }
 .rank, .result small { font-size: 10px }
 .score { font-size: 21px; color: var(--accent); text-align: right }
@@ -131,8 +124,6 @@ summary { cursor: pointer; font-weight: 600 }
   nav { order: 1; flex-basis: 100%; justify-content: flex-start; column-gap: clamp(10px, 3.4vw, 25px); flex-wrap: wrap }
   nav a { padding: 10px 0 }
   .header-launch { margin-left: auto; padding: 7px 12px }
-  .hero-inner { grid-template-columns: 1fr .85fr; min-height: 380px }
-  .hero h1 { font-size: clamp(52px, 9vw, 72px) }
   .work { grid-template-columns: 1fr }
   .guide-rows > div, .steps li > div { grid-template-columns: 1fr; gap: 8px }
   .source-links { grid-column: 1 }
@@ -142,9 +133,6 @@ summary { cursor: pointer; font-weight: 600 }
   .brand { font-size: 22px }
   nav { justify-content: space-between; gap: 0 8px }
   nav a { font-size: 12px }
-  .hero-inner { grid-template-columns: 1fr; gap: 0 }
-  .hero-copy { padding: 34px 0 0 }
-  .hero h1 { font-size: clamp(56px, 14vw, 75px); margin-block: 16px }
   .actions { margin-top: 20px }
   .atlas { grid-template-columns: 1fr }
   .section-heading { flex-wrap: wrap; gap: 8px }
@@ -165,19 +153,8 @@ summary { cursor: pointer; font-weight: 600 }
 #imagestatus { margin: 6px 0 10px }
 @media (min-width: 1000px) { .atlas { grid-template-columns: repeat(4, minmax(0, 1fr)) } }
 @media (max-width: 740px) {
-  .hero-copy { width: 65% }
-  .hero h1 { font-size: clamp(43px, 7vw, 58px) }
-  .welcome-photo { object-position: center 75% }
 }
 @media (max-width: 540px) {
-  .hero-inner { min-height: 535px; align-items: flex-start }
-  .hero-copy { padding: 32px 0 140px; width: 100% }
-  .welcome-photo { object-position: center bottom; object-fit: contain; height: auto; top: auto; bottom: -8%; }
-  .hero::before { background: linear-gradient(180deg, #050706 30%, #050706ee 41%, #05070630 66%, transparent 80%) }
-  .hero h1 { font-size: clamp(44px, 11vw, 60px) }
-  .hero .lede { max-width: 38ch }
-  .hero .actions { gap: 15px }
-  .photo-credit { font-size: 9px }
 }
 .atlas-intro { max-width: 76ch; color: var(--dim); margin-block: 24px; line-height: 1.7 }
 .atlas-tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-block: 24px }
@@ -186,7 +163,7 @@ summary { cursor: pointer; font-weight: 600 }
 #analog-status { color: var(--dim); margin: 20px 0 }
 .analog-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,270px),1fr)); gap: 20px }
 .analog-card { background: var(--panel); border: 1px solid var(--line); border-radius: 9px; overflow: hidden; min-width: 0 }
-.analog-photo { width: 100%; height: 190px; padding: 0; display: block; background: #1e291c; color: var(--accent); border: 0; cursor: zoom-in }
+.analog-photo { width: 100%; height: 190px; padding: 0; display: block; background: #172a40; color: var(--accent); border: 0; cursor: zoom-in }
 .analog-photo img { width: 100%; height: 100%; object-fit: cover }
 .analog-info { padding: 20px }
 .analog-info h2 { font-size: 23px; margin-bottom: 12px; overflow-wrap: anywhere }
@@ -230,3 +207,44 @@ summary { cursor: pointer; font-weight: 600 }
 .section-credit{position:absolute;right:20px;bottom:14px;font:11px var(--mono);color:#e6ebdf;background:#07100cb5;padding:5px 8px;text-decoration:none}
 #explorer .section-hero h1,#missions .section-hero h1{font-size:clamp(48px,5.6vw,82px)}
 @media(max-width:540px){.section-hero{padding:24px;min-height:235px}.section-hero::before{background:linear-gradient(90deg,#080c0bfa,#080c0b8a),var(--hero-image) center/cover}.section-credit{font-size:9px}}
+
+/* The opening spread pairs a field question with its credited archival plate. */
+.hero {
+  background-color: var(--bg);
+  background-image: radial-gradient(ellipse at 76% 32%, #203b58 0, transparent 57%);
+  border-bottom: 1px solid var(--line);
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 6rem);
+  padding-block: clamp(2.5rem, 5vw, 5rem);
+}
+.hero .kicker, .atlas-heading .kicker { font-size: .75rem; letter-spacing: .12em }
+.hero .kicker::before { content: ""; width: 2rem; border-top: 2px solid }
+.hero h1 {
+  font: 500 clamp(3.4rem, 5.7vw, 5.65rem)/.99 Georgia, "Times New Roman", serif;
+  letter-spacing: -.055em;
+  margin: 1.25rem 0;
+}
+.hero h1 em { font-weight: 400; font-style: italic; color: #f2c1a9 }
+.hero .lede { font-size: 1.06rem; color: #c7d3df; max-width: 44ch }
+.hero .actions { gap: 1rem 1.6rem; margin-top: 1.7rem }
+.hero .plain-link { text-decoration: underline; text-underline-offset: .35em }
+.hero-plate { padding: .5rem; background: #e2e1d9; color: #17232f }
+.welcome-photo { display: block; width: 100%; height: auto; aspect-ratio: 1.4; object-fit: cover; object-position: 50% 77% }
+.hero-plate figcaption { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .3rem 1rem; padding: .55rem .35rem .1rem; font-size: .8125rem }
+.hero-plate figcaption em { font: italic 1.15rem Georgia, serif }
+.hero-plate figcaption a:hover { color: #864228 }
+.atlas-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem }
+.atlas-heading h2 { margin-top: .35rem; font-size: clamp(1.9rem, 3.3vw, 3rem); letter-spacing: -.05em }
+.region-picker { width: min(100%, 21rem) }
+.region-picker label { font-size: .875rem; color: var(--dim) }
+.region-picker select { margin-bottom: 0 }
+@media (max-width: 740px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem }
+  .hero h1 { font-size: clamp(3.15rem, 10vw, 4.5rem) }
+  .welcome-photo { aspect-ratio: 1.75 }
+  .masthead-inner nav { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; gap: 1.25rem; min-width: 0 }
+}

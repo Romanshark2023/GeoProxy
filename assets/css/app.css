@@ -1,13 +1,13 @@
-/* GeoProxy Analog Explorer: design tokens reuse the original prototype's palette. */
+/* GeoProxy field atlas */
 :root {
-  --bg: #080f16;
-  --panel: #0d1923;
-  --panel-2: #112130;
-  --line: #233645;
+  --bg: #0a1525;
+  --panel: #112135;
+  --panel-2: #182a40;
+  --line: #344457;
   --text: #e7eef0;
-  --muted: #91a6b3;
-  --accent: #8be3ba;
-  --accent-ink: #0b2720;
+  --muted: #b9c6d5;
+  --accent: #ffb18e;
+  --accent-ink: #17202d;
   --target: #f0a35e;
   --close: #7ee2b0;
   --moderate: #f0c96a;
@@ -34,11 +34,15 @@ button, select, input { font: inherit; color: inherit; }
 .topbar {
   display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
   padding: 12px 20px; border-bottom: 1px solid var(--line);
-  background: linear-gradient(180deg, #0b1620, var(--bg));
+  background: #0a1525;
   position: sticky; top: 0; z-index: 1000;
 }
 .brand { font-weight: 750; font-size: 20px; letter-spacing: -.5px; display: flex; align-items: baseline; gap: 8px; }
-.brand .logo { color: var(--accent); }
+.brand { align-items: center; color: var(--text); text-decoration: none }
+.brand-mark { position: relative; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); transform: rotate(-32deg) }
+.brand-mark::after { content: ""; position: absolute; inset: 7px -4px; border: 1.5px solid var(--accent); border-top-color: var(--bg); border-radius: 50% }
+.map-title { padding-left: .85rem; border-left: 1px solid var(--line); font: italic 1.3rem Georgia, serif }
+.explorer-link { font-size: .875rem; text-underline-offset: .25em }
 .brand small { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
 .selector { display: flex; gap: 10px; align-items: center; }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
@@ -107,7 +111,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
 /* ---------- map pins ---------- */
 .pin-known { display: block; width: 14px; height: 14px; margin: 2px; transform: rotate(45deg); background: var(--c); border: 2px solid #fff; box-shadow: 0 0 0 2px rgba(0,0,0,.45); }
 .pin-known.is-selected { width: 18px; height: 18px; margin: 0; box-shadow: 0 0 0 3px var(--accent), 0 0 12px var(--accent); }
-.leaflet-tooltip { background: #0d1923; color: var(--text); border: 1px solid var(--line); }
+.leaflet-tooltip { background: #112135; color: var(--text); border: 1px solid var(--line); }
 .leaflet-tooltip-top:before { border-top-color: var(--line); }
 
 /* ---------- ranking ---------- */
@@ -117,7 +121,7 @@ select { background: var(--panel-2); border: 1px solid var(--line); border-radiu
   text-align: left; background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 10px 6px; cursor: pointer;
 }
 .result:hover { background: #10202c; }
-.result.is-selected { background: #14302b; box-shadow: inset 3px 0 0 var(--accent); }
+.result.is-selected { background: #20364e; box-shadow: inset 3px 0 0 var(--accent); }
 .result.is-excluded { opacity: .6; }
 .rank { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; font-size: 12px; }
 .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--c); }
